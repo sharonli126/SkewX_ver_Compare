@@ -2,7 +2,7 @@
 
 
   [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A521.10.3-brightgreen.svg)](https://www.nextflow.io/)
-  [![DOI]()](https://doi.org/10.1101/gr.279396.124)
+  [![DOI]()](https://doi.org/10.1101/2024.03.20.585856)
 
 ## Introduction
 
@@ -37,7 +37,7 @@ The required input is modbam files with 5mCG information. Then:
 5. Start running your own analysis!
 
    ```bash
-   nextflow main.nf --input samplesheet.csv --outdir skew_results --reference chm13v2.0.fa --cgi_bedfile additional_files/CGIs_CHM13v2.0_chrX.bed -profile singularity
+   nextflow main.nf --input samplesheet.csv --outdir skew_results --fasta chm13v2.0.fa --cgi CGIs_CHM13v2_chrX.bed -profile singularity
    ```
 
 <!-- TO DO: accept phased vcf to skip deepvariant, or accept haplotyped bam to skip deepvariant+whatshap? How to handle that without needing another samplesheet? I could provide haplotyped bams-->
@@ -50,7 +50,7 @@ The required input is modbam files with 5mCG information. Then:
 An example dataset is available in the `test_data` directory of this repository. The dataset contains a small region of the mouse X chromosome, with a BAM file with methylation information. The pipeline can be run on this dataset with the following command:
 
 ```bash
-nextflow main.nf --input test_data/test_data_samplesheet.csv --outdir skew_test_results --reference test_data/mm10_chrX.fa --cgi_bedfile additional_files/CGIs_mm38_chrX.bed -profile test
+nextflow main.nf --input test_data/samplesheet.csv --outdir skew_test_results --fasta test_data/mm10_chrX.fa --cgi test_data/mm10_chrX_CGI.bed -profile test
 ```
 
 ## Credits
@@ -66,7 +66,8 @@ We thank the following people for their extensive assistance in the development 
 
 ## Citations
 
-If you use  **SkewX** for your analysis, please cite it using the following doi: [10.1101/gr.279396.124](https://doi.org/10.1101/gr.279396.124)
+<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
+If you use  **SkewX** for your analysis, please cite it using the following doi: [10.1101/2024.03.20.585856](https://doi.org/10.1101/2024.03.20.585856)
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
